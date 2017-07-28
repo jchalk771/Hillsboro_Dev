@@ -1,0 +1,119 @@
+SchoolCETFees_1
+SchoolCETFees_B
+SchoolCETFees_2
+getASIFieldValue
+minmax
+hasChildren
+getTaskStatus
+closeWorkflow
+IsStrInArry
+convertToStdDate
+getSubGrpFeeAmt
+updateFeeFromASI
+updateMinFee
+updateSurChg
+voidRemoveFees
+getFeeQty					Committed
+updatePlnRvw
+invoiceAllFees
+getFeeDefByCode				Committed
+getFeeDefByDesc
+loadFeeScheduleIntoHash
+loadFeeSchedule
+FeeDef						Committed
+getTaskSpecific
+sumASITColumn				Committed
+areRequiredInspectionsOk
+getRequiredInspTypeList
+sendReadyToIssueEmail
+addParameter
+getAddressInALine
+trimString
+getACAUrl
+getACASiteUrl
+copyAddressesToASIT
+updateWaterFee
+populateCreditField
+applySDCCondition
+removeSDCCondition
+updateSewerFee
+calculateFrontageFees
+doesASITRowExist
+updateTDTFee
+updateParksFee
+updateElecWorkFees			Committed
+sendIssuedEmail
+getReqInspOnRecord
+getTLIDBankField
+addToTLIDBankField
+updateTLIDBankField
+eleFeeExists
+mechFeeExists
+plmFeeExists
+scheduleReqInspections
+scheduleAllPendingInspections
+scheduleAllChildrenFINALInspections
+areReqInspectionsFinal
+createPendingReqInspection
+isInspRequired
+setInspRequired
+areAllChildrenFinal
+updateParksBank
+getSumUnitAmount
+editCapParcelAttribute
+getPrimaryParcelNum
+updateDeferralStatus
+updateASSURANCESasit
+assessDeferralFees
+getFeeItemByVersion
+editJobValue
+assessRevisionFees
+updateWaterMeterBank
+calcSpecialBuildingFee
+calcICBOFee					Committed
+roundUpToNearest100
+roundUpToNearest			Committed
+roundNumber					Committed
+getDuplicateComplaint
+getGISInfoWrapper
+overTurnParent
+getTaskStatusDate
+permitIssueCheckStructural
+getFeeBalanceBySubGrp
+removeZeroFees
+getFeeTotalBySubGrp
+createTLIDBank
+doesTLIDRecordExist
+getTLIDRecordID
+closeAllViolationTables
+closeViolationTable
+doesPendingInspectionExist
+getUnpaidFeeBalance
+getFeeTotal
+getPaymentTotal
+updateFee					Committed
+addFee						Committed
+doesScheduledInspectionExist
+updateFeeItemInvoiceFlag	Committed
+loadOneFee					Committed
+updateFeeWithFormula		Committed
+reduceFeeAmtToZero			Committed
+calcFixedFeeByRangeFee		Committed
+calcICBOEnhancedFee			Committed
+updateFeeFromASIWithFormula
+updateReinstatement
+updateSGFee
+calcSGPercentageFee
+andrewTest1
+andrewTest2
+assessSchoolCETFees
+removeSchoolCETFees
+waiveSchoolCETFees
+removeIncorrectDistrictFees
+getSchoolFeeConstants
+adjustSchoolCETFees
+schoolCETBranchUpdates
+getSchoolFeePeriod
+updateSoHiFee
+updateSoHiTSDCFee
+
