@@ -1,4 +1,3 @@
-//override of existing function to fix single line limitation
 function updateElecWorkFees() {
 
 	elecTable = loadASITable("ELECTRICAL WORK TYPE");
