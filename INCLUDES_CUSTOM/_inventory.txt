@@ -8,11 +8,11 @@ getTaskStatus
 closeWorkflow
 IsStrInArry
 convertToStdDate
-getSubGrpFeeAmt
+getSubGrpFeeAmt				Committed
 updateFeeFromASI
 updateMinFee
 updateSurChg
-voidRemoveFees
+voidRemoveFees				Committed
 getFeeQty					Committed
 updatePlnRvw
 invoiceAllFees
@@ -80,8 +80,8 @@ overTurnParent
 getTaskStatusDate
 permitIssueCheckStructural
 getFeeBalanceBySubGrp
-removeZeroFees
-getFeeTotalBySubGrp
+removeZeroFees				Committed
+getFeeTotalBySubGrp			Committed
 createTLIDBank
 doesTLIDRecordExist
 getTLIDRecordID
@@ -102,8 +102,9 @@ calcFixedFeeByRangeFee		Committed
 calcICBOEnhancedFee			Committed
 updateFeeFromASIWithFormula
 updateReinstatement
-updateSGFee
-calcSGPercentageFee
+updateSGFee					Committed - references companion check.  That may not be declared when this function is called directly unless
+							updateFeeWithFormula or reduceFeeAmtToZero is called first
+calcSGPercentageFee			Committed
 andrewTest1
 andrewTest2
 assessSchoolCETFees
@@ -117,3 +118,11 @@ getSchoolFeePeriod
 updateSoHiFee
 updateSoHiTSDCFee
 
+//New function
+getValueToUse				Written to assign the appropriate value for Phasing and Use Lowest Valuation, called in updateBldgValuationFees
+							and metroCETFees
+
+//New functions Converted from Std choices
+bAltEnergy					Committed converted as is - possible errors in two lines looking for an ASI called Opened Date???
+updateBldgValuationFees		Rewritten and Committed for Phased Fees/Use Lowest Valuation							
+							
