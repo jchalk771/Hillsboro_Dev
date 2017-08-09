@@ -118,11 +118,10 @@ getSchoolFeePeriod
 updateSoHiFee
 updateSoHiTSDCFee
 
-//New function
-getValueToUse				Written to assign the appropriate value for Phasing and Use Lowest Valuation, called in updateBldgValuationFees
-							and metroCETFees
+//New function - Phased Fees and Use Lowest Valuation
+updateBldgValuationPhasedFees	Committed
 
 //New functions Converted from Std choices
-bAltEnergy					Committed converted as is - possible errors in two lines looking for an ASI called Opened Date???
-updateBldgValuationFees		Rewritten and Committed for Phased Fees/Use Lowest Valuation							
+bAltEnergy					possible errors in two lines looking for an ASI called Opened Date???
+						
 							
