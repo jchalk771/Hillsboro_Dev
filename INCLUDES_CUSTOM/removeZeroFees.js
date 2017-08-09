@@ -1,4 +1,4 @@
-	function removeZeroFees() {
+function removeZeroFees() {
 	try {
 		var feeArr = loadFees();
 		for (x in feeArr) {
