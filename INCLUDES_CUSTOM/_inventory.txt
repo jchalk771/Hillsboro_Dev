@@ -122,7 +122,7 @@ updateSoHiTSDCFee
 updateBldgValuationPhasedFees	Committed
 
 //New functions Converted from Std choices
-bAltEnergy					possible errors in two lines looking for an ASI called Opened Date???  Possibly Use Lowest Valuation
+bAltEnergy					Committed
 metroCETFees				To Use Lowest Valuation	
 updateBldgValuationFees		To use Lowest Valuation	
 				
