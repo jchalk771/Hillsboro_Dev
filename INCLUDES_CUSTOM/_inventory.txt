@@ -123,7 +123,7 @@ updateBldgValuationPhasedFees	Committed
 
 //New functions Converted from Std choices
 bAltEnergy					Committed
-metroCETFees				To Use Lowest Valuation	
-updateBldgValuationFees		To use Lowest Valuation	
+metroCETFees				Committed
+updateBldgValuationFees		Committed
 				
 							
