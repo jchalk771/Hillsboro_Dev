@@ -1,3 +1,4 @@
+//This function is valid for residential combo and the structural permits
 function updateBldgValuationPhasedFees() {
 	try {
 		//variable declaration
