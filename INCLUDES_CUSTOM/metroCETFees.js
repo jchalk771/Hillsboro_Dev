@@ -58,10 +58,10 @@ function metroCETFees() {
 			if((AInfo["Metro CET Refused"] != "Yes" && AInfo["Metro CET Exempt"] != "Yes") && feeExists("B_STR_045"))
 				reduceFeeAmtToZero("B_STR_045","B_STR", "STANDARD");   //only waive the city portion?
 			
-			//what about adjustments and waivers?  More than just these codes....
+			//@TODO:what about adjustments and waivers?  More than just these codes....
 		}
 		
-		//not removing zero fees?
+		//@TODO:not removing zero fees?
 		
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function metroCETFees: " + err.message + "In line number: " + err.lineNumber);
