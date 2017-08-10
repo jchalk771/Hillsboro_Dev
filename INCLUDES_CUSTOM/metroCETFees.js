@@ -1,7 +1,6 @@
 function metroCETFees() {
 	try {
 		
-		//Convert Me
 		var totValue = 0;
 
 		if(AInfo["Use Lowest Valuation"] != "Yes" && estValue > calcValue){
