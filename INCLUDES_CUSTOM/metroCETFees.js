@@ -2,20 +2,6 @@ function metroCETFees() {
 	try {
 		
 		var totValue = 0;
-
-		/*if(AInfo["Use Lowest Valuation"] != "Yes" && estValue > calcValue){
-			totValue = estValue; 
-		}	
-		else{
-			totValue = calcValue;
-		}
-
-		if(AInfo["Use Lowest Valuation"] == "Yes" && estValue < calcValue){
-			totValue = estValue;
-		}
-		else {
-			totValue = calcValue;
-		}*/
 		
 		if (AInfo["Use Lowest Valuation"] != "Yes") {
 			if (estValue > calcValue) {
