@@ -34,7 +34,7 @@ function metroCETFees() {
 				reduceFeeAmtToZero("B_STR_031","B_STR", "STANDARD");
 			}
 				
-			if((AInfo["Metro CET Refused"] == "Yes" || AInfo["Metro CET Exempt"] == "Yes"){
+			if(AInfo["Metro CET Refused"] == "Yes" || AInfo["Metro CET Exempt"] == "Yes"){
 				
 				if(totValue > 0){
 					updateSGFee("B_STR_050","B_STR", "CETMET"); 
