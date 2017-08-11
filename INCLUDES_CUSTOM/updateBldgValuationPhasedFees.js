@@ -1,6 +1,7 @@
 //This function is valid for residential combo and the structural permits
 function updateBldgValuationPhasedFees() {
 	try {
+		logDebug("**Begin updateBldgValuationPhasedFees**");
 		//variable declaration
 		var totValue = 0; //Value to base permit fees on based on Use Lowest Valuation
 		var phaseValue = 0; //Value to base plan review fees on
@@ -187,6 +188,7 @@ function updateBldgValuationPhasedFees() {
 		}
 
 		bAltEnergyWaiver();
+		logDebug("**End updateBldgValuationPhasedFees**");
 
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function updateBldgValuationPhasedFees: " + err.message + "In line number: " + err.lineNumber);

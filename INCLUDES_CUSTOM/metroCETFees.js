@@ -1,6 +1,6 @@
 function metroCETFees() {
 	try {
-		
+		logDebug("**Begin metroCETFees**");
 		var totValue = 0;
 		
 		if (AInfo["Use Lowest Valuation"] != "Yes") {
@@ -67,6 +67,7 @@ function metroCETFees() {
 		}
 		
 		//@TODO:not removing zero fees?
+		logDebug("**End metroCETFees**");
 		
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function metroCETFees: " + err.message + "In line number: " + err.lineNumber);

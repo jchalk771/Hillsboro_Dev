@@ -2,7 +2,7 @@
 //records solely based on Contractor Value with no calculations
 function updateBldgValuationFees() {
 	try {
-
+		logDebug("**Begin updateBldgValuationFees**");
 		if (feeExists("B_STR_005"))
 			voidRemoveFees("B_STR_005");
 
@@ -61,6 +61,7 @@ function updateBldgValuationFees() {
 		}
 
 		bAltEnergyWaiver();
+		logDebug("**End updateBldgValuationFees**");
 
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function updateBldgValuationFees: " + err.message + "In line number: " + err.lineNumber);

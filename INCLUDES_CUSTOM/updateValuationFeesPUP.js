@@ -1,6 +1,6 @@
 function updateValuationFeesPUP() {
 	try {
-
+		logDebug("**Begin updateValuationFeesPUP**");
 		if (feeExists("B_STR_005")) {
 			voidRemoveFees("B_STR_005");
 		}
@@ -49,6 +49,7 @@ function updateValuationFeesPUP() {
 		}
 
 		bAltEnergyWaiver();
+		logDebug("**End updateValuationFeesPUP**");
 
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function updateValuationFeesPUP: " + err.message + "In line number: " + err.lineNumber);
