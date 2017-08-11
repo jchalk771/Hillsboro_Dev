@@ -24,6 +24,7 @@ function metroCETFees() {
 		//adding for compatibility - record will have no Use Lowest Valuation Field, not relevant to that type
 		if (appTypeArray[2] == "Fire"){
 			totValue = estValue;
+			aa.finance.reCalculateFees(capId, "CONT", estValue);
 		}
 
 		if(AInfo["Metro CET Applies"] == "Yes"){
