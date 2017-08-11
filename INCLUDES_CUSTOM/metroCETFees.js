@@ -3,7 +3,7 @@ function metroCETFees() {
 		
 		var totValue = 0;
 
-		if(AInfo["Use Lowest Valuation"] != "Yes" && estValue > calcValue){
+		/*if(AInfo["Use Lowest Valuation"] != "Yes" && estValue > calcValue){
 			totValue = estValue; 
 		}	
 		else{
@@ -15,6 +15,24 @@ function metroCETFees() {
 		}
 		else {
 			totValue = calcValue;
+		}*/
+		
+		if (AInfo["Use Lowest Valuation"] != "Yes") {
+			if (estValue > calcValue) {
+				totValue = estValue;
+				aa.finance.reCalculateFees(capId, "CONT", estValue);
+			} else {
+				totValue = calcValue;
+				aa.finance.reCalculateFees(capId, "CALC", calcValue);
+			}
+		} else {
+			if (estValue < calcValue) {
+				totValue = estValue;
+				aa.finance.reCalculateFees(capId, "CONT", estValue);
+			} else {
+				totValue = calcValue;
+				aa.finance.reCalculateFees(capId, "CALC", calcValue);
+			}
 		}
 		
 		//adding for compatibility - record will have no Use Lowest Valuation Field, not relevant to that type
