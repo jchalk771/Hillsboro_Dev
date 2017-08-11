@@ -1,6 +1,6 @@
 function adjustBldgValFees(recordStatus) {
 	try {
-		//Existing updateFee, updateSG... custom functions also contain check for Recalc Fees = Yes.
+		//Existing fee custom functions also contain check for Recalc Fees = Yes.
 		//This function is to augment that in the event that Recalc Fees is not returned to No after an adjustment of scope.
 		var adjustStatus = true;
 	
