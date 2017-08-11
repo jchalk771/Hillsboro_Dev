@@ -1,6 +1,6 @@
 function bAltEnergyWaiver() {
 	try {
-		
+		logDebug("**Begin bAltEnergyWaiver**");
 		appElec = false;
 		appMech = false;
 		appStrc = false;
@@ -105,13 +105,8 @@ function bAltEnergyWaiver() {
 				}
 			}
 
-			//@TODO: This works for all records Including historical, line below indicates that should not always be the case...
-			updateSGFee("SURCHRG", "SURCHRG", "SURCHRG");
-
-			//This only works for Historical Records where that ASI field is more recent than 5/1/2014
 			if (getAppSpecific("Opened Date") > "05/01/2014")
 				updateSGFee("SURCHRG", "SURCHRG", "SURCHRG");
-
 		}
 
 		//************************************Alt Energy = No******************************************************
@@ -139,7 +134,11 @@ function bAltEnergyWaiver() {
 				reduceFeeAmtToZero("B_STR_020", "B_STR", "STANDARD");
 		}
 
+		if (AInfo['Alternative Energy'] != "Yes")	
+			updateSGFee("SURCHRG", "SURCHRG", "SURCHRG");
+		
 		removeZeroFees();
+		logDebug("**End bAltEnergyWaiver**");
 
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function bAltEnergyWaiver: " + err.message + "In line number: " + err.lineNumber);
