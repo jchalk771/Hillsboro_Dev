@@ -27,7 +27,7 @@ function updateBldgValuationFees() {
 				}
 			}
 
-			if (feeExists("B_STR_180") {
+			if (feeExists("B_STR_180")) {
 				if (AInfo['Fire / Life / Safety'] == "Yes") {
 					updateSGFee("B_STR_180", "B_STR", "PLANFLS");
 				} else {
