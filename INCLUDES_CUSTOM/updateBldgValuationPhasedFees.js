@@ -70,6 +70,13 @@ function updateBldgValuationPhasedFees() {
 		//if the current valuation that we are using is 0, drop the building valuation fee to zero
 		if (totValue == 0 && feeExists("B_STR_006"))
 			reduceFeeAmtToZero("B_STR_006", "B_STR", "STANDARD");
+		
+		//Remove FLS fee if ASI field is No
+		if (feeExists("B_STR_180") && AInfo["Fire / Life / Safety"] != "Yes")
+			voidRemoveFees("B_STR_180");
+		
+		if (feeExists("B_STR_180P") && AInfo["Fire / Life / Safety"] != "Yes")
+			voidRemoveFees("B_STR_180P");
 
 		//**************************Not Phased - Review Fees**************************************************************
 		if (!phase1 && !phaseOth) {
