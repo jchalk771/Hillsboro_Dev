@@ -70,15 +70,15 @@ function updateBldgValuationPhasedFees() {
 		//if the current valuation that we are using is 0, drop the building valuation fee to zero
 		if (totValue == 0 && feeExists("B_STR_006"))
 			reduceFeeAmtToZero("B_STR_006", "B_STR", "STANDARD");
-		
+
 		//Remove FLS fee if ASI field is No
 		if (feeExists("B_STR_180") && AInfo["Fire / Life / Safety"] != "Yes")
-			voidRemoveFees("B_STR_180");
-		
-		if (feeExists("B_STR_180P") && AInfo["Fire / Life / Safety"] != "Yes")
-			voidRemoveFees("B_STR_180P");
+			reduceFeeAmtToZero("B_STR_180");
 
-		//**************************Not Phased - Review Fees**************************************************************
+        if (feeExists("B_STR_180P") && AInfo["Fire / Life / Safety"] != "Yes")
+			reduceFeeAmtToZero("B_STR_180P");
+
+        //**************************Not Phased - Review Fees**************************************************************
 		if (!phase1 && !phaseOth) {
 			if (totValue > 0) {
 				//Assess Building Plan Review Fee
@@ -126,7 +126,7 @@ function updateBldgValuationPhasedFees() {
 
 				//Assess Fire/Life/Safety Plan Review Fee
 				if (AInfo["Fire / Life / Safety"] == "Yes") {
-					if (feeExists("B_STR_180P") || !feeExists("B_STR_180P", "INVOICED")) {
+					if (feeExists("B_STR_180P") && qtyChanged || !feeExists("B_STR_180P", "INVOICED")) {
 						updateFeeWithFormula("B_STR_180P", "B_STR", "STANDARD", parseFloat(phaseValue), "N");
 					}
 				}
@@ -150,7 +150,7 @@ function updateBldgValuationPhasedFees() {
 			removeZeroFees();
 		}
 
-		//*****************************************Other Phase***************************************************8888
+		//*****************************************Other Phase***************************************************
 		if (phaseOth) {
 			//I don't like this approach
 			//if (totValue > 0){
@@ -161,10 +161,12 @@ function updateBldgValuationPhasedFees() {
 
 			//rewriting
 			if (phaseValue > 0) {
+				var bldValFeeAmt = feeAmount("B_STR_006","NEW","INVOICED");
+				logDebug("BldValFeeAmt net is: " + bldValFeeAmt);
 				//Assess Phased Item "Review" Fee based on the full project value
 				if (!appMatch("Building/*/Fire/NA") && !appMatch("Building/*/Private Utility/NA")) {
 					if (!feeExists("B_STR_150P", "INVOICED") || (feeExists("B_STR_150P") && qtyChanged)) {
-						updateFeeWithFormula("B_STR_150P", "B_STR", "STANDARD", parseFloat(phaseValue), "N");
+						updateFeeWithFormula("B_STR_150P", "B_STR", "STANDARD", parseFloat(bldValFeeAmt), "N");
 					}
 				}
 			}
@@ -201,3 +203,4 @@ function updateBldgValuationPhasedFees() {
 		logDebug("A JavaScript error has occurred in custom function updateBldgValuationPhasedFees: " + err.message + "In line number: " + err.lineNumber);
 	}
 }
+
