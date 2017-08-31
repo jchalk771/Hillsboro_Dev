@@ -7,6 +7,8 @@ function FeeDef() { // Fee Definition object
 		this.feeCode = null;
 		this.comments = null;
 		this.calcProc = null;
+		this.feeMax = null;
+		this.feeMin = null;
 		
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function FeeDef: " + err.message + "In line number: " + err.lineNumber);
