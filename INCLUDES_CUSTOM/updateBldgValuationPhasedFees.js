@@ -166,7 +166,7 @@ function updateBldgValuationPhasedFees() {
 				//Assess Phased Item "Review" Fee based on the full project value
 				if (!appMatch("Building/*/Fire/NA") && !appMatch("Building/*/Private Utility/NA")) {
 					if (!feeExists("B_STR_150P", "INVOICED") || (feeExists("B_STR_150P") && qtyChanged)) {
-						updateFeeWithFormula("B_STR_150P", "B_STR", "STANDARD", parseFloat(bldValFeeAmt), "N");
+						updateICBOStyleWithMax("B_STR_150P", "B_STR", "STANDARD", parseFloat(bldValFeeAmt), "N");
 					}
 				}
 			}
@@ -203,4 +203,3 @@ function updateBldgValuationPhasedFees() {
 		logDebug("A JavaScript error has occurred in custom function updateBldgValuationPhasedFees: " + err.message + "In line number: " + err.lineNumber);
 	}
 }
-
