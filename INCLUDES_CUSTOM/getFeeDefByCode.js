@@ -14,8 +14,8 @@ function getFeeDefByCode(fsched, feeCode) {
 					f.calcProc = arrFees[xx].getCalProc();
 					var rft = arrFees[xx].getrFreeItem();
 					f.comments = rft.getComments();
-					f.feeMax = roundNumber(arrFees[xx].getMaxFee(), 2).toFixed(2);
-					f.feeMin = roundNumber(arrFees[xx].getMaxFee(), 2).toFixed(2);
+					f.feeMax = roundNumber(arrFees[xx].getMaxFee(), 2);
+					f.feeMin = roundNumber(arrFees[xx].getMaxFee(), 2);
 					return f;
 				}
 
@@ -26,6 +26,6 @@ function getFeeDefByCode(fsched, feeCode) {
 		}
 		
 	} catch (err) {
-		logDebug("A JavaScript error has occurred in custom function getFeeDefByCode: " + err.message + "In line number: " + err.lineNumber);
+		logDebug("A JavaScript error has occurred in custom function getFeeDefByCode-INCLUDES_CUSTOM: " + err.message + "In line number: " + err.lineNumber);
 	}
 }
