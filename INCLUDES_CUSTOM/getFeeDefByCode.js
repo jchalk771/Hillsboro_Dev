@@ -14,6 +14,8 @@ function getFeeDefByCode(fsched, feeCode) {
 					f.calcProc = arrFees[xx].getCalProc();
 					var rft = arrFees[xx].getrFreeItem();
 					f.comments = rft.getComments();
+					f.feeMax = roundNumber(arrFees[xx].getMaxFee(), 2).toFixed(2);
+					f.feeMin = roundNumber(arrFees[xx].getMaxFee(), 2).toFixed(2);
 					return f;
 				}
 
