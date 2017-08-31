@@ -1,16 +1,16 @@
-function getFeeCodeMax(fsched, feeCode) {
+function getFeeCodeMax(pFeeSched, pFeeCode) {
 	try {
 		var maxValue = false;
-		var arrFeesResult = aa.finance.getFeeItemList(null, fsched, null);
+		var arrFeesResult = aa.finance.getFeeItemList(null, pFeeSched, null);
 		if (!arrFeesResult.getSuccess()) {
-			logDebug("Unable to retrieve fee schedule: " + fsched);
+			logDebug("Unable to retrieve fee schedule: " + pFeeSched);
 			return false;
 		} else {
 			var arrFees = arrFeesResult.getOutput();
 			for (xx in arrFees) {
 				thisFee = arrFees[xx];
 				var fCode = thisFee.getFeeCod();
-				if (fCode.equals(feeCode)) {
+				if (fCode.equals(pFeeCode)) {
 					maxValue = roundNumber(thisFee.getMaxFee(), 2).toFixed(2);
 					break;
 				}
@@ -20,7 +20,7 @@ function getFeeCodeMax(fsched, feeCode) {
 				logDebug("Max value for fee code " + feeCode + " found: " + maxValue);
 				return maxValue;
 			} else {
-				logDebug("Fee code " + feeCode + " has no max value set");
+				logDebug("Fee code " + pFeeCode + " has no max value set");
 				return false;
 			}
 		}
