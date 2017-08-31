@@ -119,16 +119,16 @@ function updateBldgValuationPhasedFees() {
 			if (phaseValue > 0) {
 				//Assess Building Plan Review Fee based on the full project value
 				if (!appMatch("Building/*/Fire/NA") && !appMatch("Building/*/Private Utility/NA")) {
-					//if (!feeExists("B_STR_160P", "INVOICED") || (feeExists("B_STR_160P") && qtyChanged)) {
+					if (!feeExists("B_STR_160P", "INVOICED") || (feeExists("B_STR_160P") && qtyChanged)) {
 						updateFeeWithFormula("B_STR_160P", "B_STR", "STANDARD", parseFloat(phaseValue), "N");
-					//}
+					}
 				}
 
 				//Assess Fire/Life/Safety Plan Review Fee
 				if (AInfo["Fire / Life / Safety"] == "Yes") {
-					//if (feeExists("B_STR_180P") && qtyChanged || !feeExists("B_STR_180P", "INVOICED")) {
+					if (feeExists("B_STR_180P") && qtyChanged || !feeExists("B_STR_180P", "INVOICED")) {
 						updateFeeWithFormula("B_STR_180P", "B_STR", "STANDARD", parseFloat(phaseValue), "N");
-					//}
+					}
 				}
 			}
 
