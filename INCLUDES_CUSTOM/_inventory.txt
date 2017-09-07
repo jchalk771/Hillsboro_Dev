@@ -121,6 +121,8 @@ updateSoHiTSDCFee
 //New function - Phased Fees and Use Lowest Valuation
 updateBldgValuationPhasedFees	Committed
 adjustBldgValFees				Committed	//in lieu of fixed date rules, update fees unless records are in a specific status
+updateICBOStyleWithMax			Committed
+calcICBOFeeWPrecision			Committed
 
 //New functions Converted from Std choices
 bAltEnergy					Committed
