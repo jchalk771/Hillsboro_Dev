@@ -78,11 +78,11 @@ function updateElecWorkFees() {
 				updateFee("B_ELE_02", "B_ELE", "STANDARD", mfFeeAmt, "N");
 			} else {
 				if (feeExists("B_ELE_02"))
-					reduceFeeAmtToZero("B_ELE_02", "B_ELE", "STANDARD", sfTotal, "N");
+					reduceFeeAmtToZero("B_ELE_02", "B_ELE", "STANDARD");
 			}
 		} else {
 			if (feeExists("B_ELE_02"))
-				reduceFeeAmtToZero("B_ELE_02", "B_ELE", "STANDARD", sfTotal, "N");
+				reduceFeeAmtToZero("B_ELE_02", "B_ELE", "STANDARD");
 		}
 	} catch (err) {
 		logDebug("A JavaScript Error occurred in updateElecWorkFees-INCLUDES_CUSTOM: " + err.message + " In Line " + err.lineNumber);
