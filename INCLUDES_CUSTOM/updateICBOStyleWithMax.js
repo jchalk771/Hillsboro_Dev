@@ -65,10 +65,15 @@ function updateICBOStyleWithMax(fcode, fsched, fperiod, fqty, finvoice, pDuplica
 							logDebug(refFeeDef.calcProc);
 							feeCodeMax = refFeeDef.feeMax;
 							logDebug("Max value of : " + feeCodeMax);
-							newAmt = calcICBOFee(refFeeDef.formula, parseFloat(fqty));
+							newAmt = calcICBOFeeWPrecision(refFeeDef.formula, parseFloat(fqty), 2);
 							
 							//logic here to address max
-							if ((currentAmt + newAmt) > feeCodeMax){
+							if (newAmt < feeCodeMax){
+								logDebug("Current amt = " + currentAmt + " current qty = " + currentQty + " new amt = " + newAmt + " new qty = " + fqty);
+								diffAmt = newAmt - currentAmt;
+								diffQty = fqty - currentQty;
+							}
+							else if ((currentAmt + newAmt) > feeCodeMax){
 								newAmt = feeCodeMax;
 								diffAmt = newAmt - currentAmt;
 								diffQty = feeCodeMax - currentAmt;
