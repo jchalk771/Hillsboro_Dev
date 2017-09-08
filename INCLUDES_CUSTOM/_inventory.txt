@@ -97,7 +97,7 @@ doesScheduledInspectionExist
 updateFeeItemInvoiceFlag	Committed
 loadOneFee					Committed
 updateFeeWithFormula		Committed
-reduceFeeAmtToZero			Committed
+reduceFeeAmtToZero			Committed - suspect this as contributing to rounding errors
 calcFixedFeeByRangeFee		Committed
 calcICBOEnhancedFee			Committed
 updateFeeFromASIWithFormula
