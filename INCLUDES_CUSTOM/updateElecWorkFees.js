@@ -33,7 +33,7 @@ function updateElecWorkFees() {
 					if (!isNaN(parseFloat(sqFt))) {
 						var sfUnits = row["No. of Units"];
 						if (!isNaN(parseFloat(sfUnits)))
-							sfSqFt += (parseFloat(sqFt) * parseFloat(sfUnits));
+							sfSqFt += (parseFloat(sqFt));
 					}
 				}
 				if ((sfSqFt > 0) && (sfUnits > 0)) {
