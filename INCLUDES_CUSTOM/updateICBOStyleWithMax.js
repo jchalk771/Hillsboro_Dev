@@ -37,7 +37,7 @@ function updateICBOStyleWithMax(fcode, fsched, fperiod, fqty, finvoice, pDuplica
 		var adjustedQty = fqty;
 		var feeSeq = null;
 		feeUpdated = false;
-		
+
 		if (pFeeSeq == null)
 			getFeeResult = aa.finance.getFeeItemByFeeCode(capId, fcode, fperiod);
 		else
@@ -50,7 +50,7 @@ function updateICBOStyleWithMax(fcode, fsched, fperiod, fqty, finvoice, pDuplica
 				var feeList = new Array();
 				feeList[0] = getFeeResult.getOutput();
 			}
-			
+
 			for (feeNum in feeList) {
 				if (feeList[feeNum].getFeeitemStatus().equals("INVOICED")) {
 					invFeeItem = feeList[feeNum];
@@ -60,31 +60,29 @@ function updateICBOStyleWithMax(fcode, fsched, fperiod, fqty, finvoice, pDuplica
 							removeFee(fcode, fperiod); // remove any NEW fees that might exist
 							currentAmt = feeAmount(fcode, "INVOICED"); // get amount of all fees for this fee code
 							currentQty = getFeeQty(fcode);
-							
+
 							refFeeDef = getFeeDefByCode(fsched, fcode);
 							logDebug(refFeeDef.calcProc);
 							feeCodeMax = refFeeDef.feeMax;
 							logDebug("Max value of : " + feeCodeMax);
 							newAmt = calcICBOFeeWPrecision(refFeeDef.formula, parseFloat(fqty), 2);
-							
+
 							//logic here to address max
-							if (newAmt < feeCodeMax){
+							if (newAmt < feeCodeMax) {
 								logDebug("Current amt = " + currentAmt + " current qty = " + currentQty + " new amt = " + newAmt + " new qty = " + fqty);
 								diffAmt = newAmt - currentAmt;
 								diffQty = fqty - currentQty;
-							}
-							else if ((currentAmt + newAmt) > feeCodeMax){
+							} else if ((currentAmt + newAmt) > feeCodeMax) {
 								newAmt = feeCodeMax;
 								diffAmt = newAmt - currentAmt;
 								diffQty = feeCodeMax - currentAmt;
 								logDebug("Current amt = " + currentAmt + " current qty = " + currentQty + " New amt exceeds max.  Assessing up to: " + feeCodeMax + " based on new qty = " + fqty);
-							}
-							else {
+							} else {
 								logDebug("Current amt = " + currentAmt + " current qty = " + currentQty + " new amt = " + newAmt + " new qty = " + fqty);
 								diffAmt = newAmt - currentAmt;
 								diffQty = fqty - currentQty;
 							}
-							
+
 							logDebug("Difference in amt = " + diffAmt + " difference in qty = " + diffQty);
 							// need to add a new fee using amount difference.
 							if (roundNumber(diffAmt, 2) != 0) {
@@ -152,7 +150,7 @@ function updateICBOStyleWithMax(fcode, fsched, fperiod, fqty, finvoice, pDuplica
 			feeSeq = null;
 		updateFeeItemInvoiceFlag(feeSeq, finvoice);
 		return feeSeq;
-		
+
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function updateICBOStyleWithMax: " + err.message + "In line number: " + err.lineNumber);
 	}
