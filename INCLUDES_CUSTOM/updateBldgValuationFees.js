@@ -1,4 +1,4 @@
-//this function is only relevant now for calls from Mechanical, Private Utility, & Fire Branches 
+//this function is only relevant now for calls from Mechanical, Private Utility, & Fire Branches
 //records solely based on Contractor Value with no calculations
 function updateBldgValuationFees() {
 	try {
