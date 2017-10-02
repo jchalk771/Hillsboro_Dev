@@ -134,9 +134,9 @@ function bAltEnergyWaiver() {
 				reduceFeeAmtToZero("B_STR_020", "B_STR", "STANDARD");
 		}
 
-		if (AInfo['Alternative Energy'] != "Yes")	
+		if (AInfo['Alternative Energy'] != "Yes")
 			updateSGFee("SURCHRG", "SURCHRG", "SURCHRG");
-		
+
 		removeZeroFees();
 		logDebug("**End bAltEnergyWaiver**");
 
