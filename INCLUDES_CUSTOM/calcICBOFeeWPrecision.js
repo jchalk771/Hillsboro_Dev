@@ -1,6 +1,6 @@
 function calcICBOFeeWPrecision(calcVariable, capval, fixedVal) {
 	try {
-		
+
 		var fee = 0;
 		var prevRange = 0;
 		var i = 0;
@@ -34,7 +34,6 @@ function calcICBOFeeWPrecision(calcVariable, capval, fixedVal) {
 		}
 		logDebug("Fee = " + fee);
 		return roundNumber(fee, 2);
-
 
 	} catch (err) {
 		logDebug("A JavaScript error has occurred in custom function calcICBOFeeWPrecision: " + err.message + "In line number: " + err.lineNumber);
