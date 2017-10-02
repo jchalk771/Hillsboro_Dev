@@ -75,10 +75,10 @@ function updateBldgValuationPhasedFees() {
 		if (feeExists("B_STR_180") && AInfo["Fire / Life / Safety"] != "Yes")
 			reduceFeeAmtToZero("B_STR_180", "B_STR", "STANDARD");
 
-        if (feeExists("B_STR_180P") && AInfo["Fire / Life / Safety"] != "Yes")
+		if (feeExists("B_STR_180P") && AInfo["Fire / Life / Safety"] != "Yes")
 			reduceFeeAmtToZero("B_STR_180P", "B_STR", "STANDARD");
 
-        //**************************Not Phased - Review Fees**************************************************************
+		//**************************Not Phased - Review Fees**************************************************************
 		if (!phase1 && !phaseOth) {
 			if (totValue > 0) {
 				//Assess Building Plan Review Fee
@@ -120,14 +120,14 @@ function updateBldgValuationPhasedFees() {
 				//Assess Building Plan Review Fee based on the full project value
 				if (!appMatch("Building/*/Fire/NA") && !appMatch("Building/*/Private Utility/NA")) {
 					//if (!feeExists("B_STR_160P", "INVOICED") || (feeExists("B_STR_160P") && qtyChanged)) {
-						updateFeeWithFormula("B_STR_160P", "B_STR", "STANDARD", parseFloat(phaseValue), "N");
+					updateFeeWithFormula("B_STR_160P", "B_STR", "STANDARD", parseFloat(phaseValue), "N");
 					//}
 				}
 
 				//Assess Fire/Life/Safety Plan Review Fee
 				if (AInfo["Fire / Life / Safety"] == "Yes") {
 					//if (feeExists("B_STR_180P") && qtyChanged || !feeExists("B_STR_180P", "INVOICED")) {
-						updateFeeWithFormula("B_STR_180P", "B_STR", "STANDARD", parseFloat(phaseValue), "N");
+					updateFeeWithFormula("B_STR_180P", "B_STR", "STANDARD", parseFloat(phaseValue), "N");
 					//}
 				}
 			}
@@ -161,7 +161,7 @@ function updateBldgValuationPhasedFees() {
 
 			//rewriting
 			if (phaseValue > 0) {
-				var bldValFeeAmt = feeAmount("B_STR_006","NEW","INVOICED");
+				var bldValFeeAmt = feeAmount("B_STR_006", "NEW", "INVOICED");
 				logDebug("BldValFeeAmt net is: " + bldValFeeAmt);
 				//Assess Phased Item "Review" Fee based on the full project value
 				if (!appMatch("Building/*/Fire/NA") && !appMatch("Building/*/Private Utility/NA")) {
