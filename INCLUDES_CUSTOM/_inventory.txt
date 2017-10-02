@@ -129,4 +129,10 @@ bAltEnergy					Committed
 metroCETFees				Committed
 updateBldgValuationFees		Committed
 updateValuationFeesPUP		Committed				
+
+//New functions - use unknown
+engTDTcheck					Committed - no try/catch	
+parksSDCcheck				Committed - no try/catch
+sohiParksSDCcheck			Committed - no try/catch
+sohiTSDCCcheck				Committed - no try/catch
 							
